@@ -1,0 +1,25 @@
+server:
+  port: 8081    # ? Keycloak already on 8080
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: frontend-app
+            client-secret: 4hmRJLOZ7yzR3k9eDuABfjt2rPwNAaxs
+            scope: openid, profile, email
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            provider: keycloak
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/demo   # ? Your running realm
+            user-name-attribute: preferred_username
+
+app:
+  security:
+    required-role: my-role
+    mfa-role: mfa-role
+    require-mfa: false
