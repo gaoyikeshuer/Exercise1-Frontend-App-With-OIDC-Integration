@@ -22,4 +22,4 @@ app:
   security:
     required-role: my-role
     mfa-role: mfa-role
-    require-mfa: false
+    require-mfa: true

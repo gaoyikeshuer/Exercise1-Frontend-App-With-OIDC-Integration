@@ -2,8 +2,6 @@ package com.example.frontendapp.configuration;
 
 import com.example.frontendapp.security.CustomOidcUser;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
-
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -20,9 +18,7 @@ public final class KeycloakUtils {
         if (claims == null)
             return false;
 
-        // --------------------------
-        // 1) Check Realm Roles
-        // --------------------------
+        // 1 Check Realm Roles
         Object realmAccessObj = claims.get("realm_access");
         if (realmAccessObj instanceof Map<?, ?> realmAccess) {
 
@@ -35,9 +31,7 @@ public final class KeycloakUtils {
             }
         }
 
-        // --------------------------
-        // 2) Check Client Roles
-        // --------------------------
+        // 2Check Client Roles
         Object resourceAccessObj = claims.get("resource_access");
         if (resourceAccessObj instanceof Map<?, ?> clientRolesMap) {
 

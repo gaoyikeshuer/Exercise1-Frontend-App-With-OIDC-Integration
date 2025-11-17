@@ -50,10 +50,6 @@ public class SecurityConfig {
 
         return http.build();
     }
-    /**
-     * Centralized access rule for /calendar endpoints.
-     * Checks required role and MFA if enabled.
-     */
     private AuthorizationDecision checkAccess(Supplier<Authentication> authentication,
                                               RequestAuthorizationContext context) {
 
