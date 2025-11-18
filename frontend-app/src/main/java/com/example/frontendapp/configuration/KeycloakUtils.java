@@ -31,7 +31,7 @@ public final class KeycloakUtils {
             }
         }
 
-        // 2Check Client Roles
+        // 2.Check Client Roles
         Object resourceAccessObj = claims.get("resource_access");
         if (resourceAccessObj instanceof Map<?, ?> clientRolesMap) {
 

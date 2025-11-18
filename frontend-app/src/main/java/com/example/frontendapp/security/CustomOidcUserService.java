@@ -20,8 +20,6 @@ public class CustomOidcUserService extends OidcUserService {
     public OidcUser loadUser(OidcUserRequest userRequest) {
 
         OidcUser oidcUser = super.loadUser(userRequest);
-
-        // Decode access token into JWT with claims
         String tokenValue = userRequest.getAccessToken().getTokenValue();
         Jwt accessTokenJwt = jwtDecoder.decode(tokenValue);
         // System.out.println("ACCESS TOKEN = " + tokenValue);

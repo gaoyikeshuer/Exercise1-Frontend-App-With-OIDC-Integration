@@ -1,5 +1,5 @@
 server:
-  port: 8081    # ? Keycloak already on 8080
+  port: 8081
 
 spring:
   security:
@@ -15,7 +15,7 @@ spring:
             provider: keycloak
         provider:
           keycloak:
-            issuer-uri: http://localhost:8080/realms/demo   # ? Your running realm
+            issuer-uri: http://localhost:8080/realms/demo
             user-name-attribute: preferred_username
 
 app:

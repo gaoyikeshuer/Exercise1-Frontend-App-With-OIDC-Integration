@@ -21,6 +21,9 @@ Both services integrate with Keycloak using the OpenID Connect (OIDC) protocol.
    Only users with Keycloak role: `my-role` can access `/calendar`. Authorization logic is externalized: `app.security.required-role: my-role`
 
 # Keycloak setup
+
+After installing keycloak on your machine, you need to run `./kc.sh start-dev` (Only for development) at bin folder terminal. then open `http://localhost:8080` to log on admin console.
+
 1. create Realm
    Realm name: demo
 2. create Users

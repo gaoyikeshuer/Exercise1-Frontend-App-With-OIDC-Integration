@@ -20,8 +20,6 @@ public class CustomOidcUser implements OidcUser {
     public Map<String, Object> getAccessTokenClaims() {
         return accessTokenClaims;
     }
-
-    // NEW REQUIRED METHOD
     @Override
     public Map<String, Object> getAttributes() {
 
